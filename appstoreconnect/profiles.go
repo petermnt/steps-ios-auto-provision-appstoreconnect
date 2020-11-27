@@ -157,6 +157,7 @@ func (s ProvisioningService) ListProfiles(opt *ListProfilesOptions) (*ProfilesRe
 type ProfileCreateRequestDataAttributes struct {
 	Name        string      `json:"name"`
 	ProfileType ProfileType `json:"profileType"`
+	TemplateName string 		`json:"templateName"`
 }
 
 // ProfileCreateRequestDataRelationshipData ...
@@ -234,6 +235,7 @@ func NewProfileCreateRequest(profileType ProfileType, name, bundleIDID string, c
 		Attributes: ProfileCreateRequestDataAttributes{
 			Name:        name,
 			ProfileType: profileType,
+			TemplateName: "CarPlay Audio App(Distribution)",
 		},
 		Relationships: relationships,
 		Type:          "profiles",
